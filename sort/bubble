@@ -1,0 +1,43 @@
+#define N 10
+#include <stdio.h>
+int print(int array[]) //printing func
+{
+	int i;
+	for(i = 0;i<N;i++)
+	{
+		printf("%d ",array[i]);
+	}
+}
+
+int switchfunc(int *a,int *b) // switch func
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int indicator(int array[])
+{
+	int i,j;
+	for(i=0;i<N-1;i++)
+	{
+    for(j=0;j<N-1;j++)
+	{
+    	if(array[j]>array[j+1])
+	    {
+			switchfunc(&array[j],&array[j+1]);
+        }
+    }
+	}
+}
+
+int main() // main func
+{
+    int array[N] = {7,3,1,5,9,2,0,8,6,4};
+   	print(array); //work
+	printf("\nthe sorted array is:\n ");
+	indicator(array);
+	print(array);
+	
+}
