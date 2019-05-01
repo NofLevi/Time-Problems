@@ -23,6 +23,7 @@ int main()
 	
 	for(i=0;i<N;i++) // printing the orderd array
 	{
+		if(array[i] != 0;
 		printf("%d",array[i]);
 	}
 }
